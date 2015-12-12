@@ -1,5 +1,50 @@
 /* your beautiful css styling goes here! */
 
+
+@font-face {
+    font-family:"8bit";
+    src: url("8-bit.ttf") /* TTF file for CSS3 browsers */
+}
+
+body{
+  font-family: "8bit";
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.healthBar {
+  width: 200px;
+  height: 20px;
+  border: 2px solid #81BD3B;
+  margin: 10px;
+  background-color: #F0F0F0;
+  border-radius: 5px;
+  box-shadow: inset 0px 3px 10px #A8D250;
+}
+
+.healthIndicator {
+  width: 100%;
+  height: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d2ff52+0,91e842+100;Neon */
+  background: #d2ff52; /* Old browsers */
+  background: -moz-linear-gradient(top,  #d2ff52 0%, #91e842 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #d2ff52 0%,#91e842 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #d2ff52 0%,#91e842 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842',GradientType=0 ); /* IE6-9 */
+
+  padding: 0;
+  margin: 0;
+  box-shadow: inset 0px 3px 10px #A8D250;
+}
+
+svg {
+
+  border: 2px solid #000;
+  background-image: url(http://cdn.wonderfulengineering.com/wp-content/uploads/2014/04/space-wallpapers-2.jpg);
+  background-color: #000;
+  background-size: 160%;
+  max-width: 750px;
+}
+
 /* Note: an asteroid image is included in this repo.
 Feel free to use it if you like. */
 
