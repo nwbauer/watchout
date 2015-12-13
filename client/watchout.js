@@ -97,7 +97,7 @@ d3.select('svg').on('click', function(d) {
 
 
 
-d3.select('body').on('keyup', function (){
+d3.select('body').on('keydown', function (){
   keypressed = d3.event.which;
   //console.log(keypressed);
   //alert('keycode');
@@ -105,13 +105,33 @@ d3.select('body').on('keyup', function (){
   
   if(gameRunning){
     if(keypressed === up){
-      hero.transition().duration(100).attr('cy', function(d){ d.y -= movement; return d.y});
+        hero.transition().duration(100).attr('cy', function(d){ 
+          if(d.y - movement > 0){
+            d.y -= movement;
+          } 
+          return d.y
+        });
     }else if(keypressed === down){
-      hero.transition().duration(100).attr('cy', function(d){ d.y += movement; return d.y});
+      hero.transition().duration(100).attr('cy', function(d){ 
+        if(d.y + movement < 120){
+          d.y += movement; 
+        }
+        return d.y
+      });
     }else if(keypressed === left){
-      hero.transition().duration(100).attr('cx', function(d){ d.x -= movement; return d.x });
+      hero.transition().duration(100).attr('cx', function(d){ 
+        if(d.x - movement > 0){
+          d.x -= movement; 
+        }
+        return d.x
+      });
     }else if(keypressed === right){
-      hero.transition().duration(100).attr('cx', function(d){ d.x += movement; return d.x });
+      hero.transition().duration(100).attr('cx', function(d){ 
+        if(d.x + movement < 120){
+          d.x += movement; 
+        }
+        return d.x
+      });
     } else if (keypressed === 32){
       d3.selectAll('circle:not(.hero)').each(function(d){ console.log(checkingContact.call(this,d,true))});
       debugger;
