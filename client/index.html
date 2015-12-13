@@ -4,24 +4,32 @@
     <link rel='stylesheet' type='css' href='styles.css'>
   </head>
   <body>
-    <div class="scoreboard">
+  <div id="gameBox">
+      <div class="scoreboard">
 
-      <!-- Modify the scoreboard when important events occur in your game! -->
-      <div class="level">Level <span>1</span></div>
-      <div class="highscore">Longest Time: <span>0</span></div>
-      <div class="time">Time Survived: <span>0</span></div>
-      <div class="collisions">Health: <span>0</span>%</div>
-      
-    
-      <div class='healthBar'>
-        <div class="healthIndicator"></div>
+        <!-- Modify the scoreboard when important events occur in your game! -->
+        <div class="highscore">Longest Time: <span>21.8 sec</span></div>
+        <div class="time">Time Survived: <span>21.8 sec</span></div>
+        <div class="level">Level <span>3</span></div>
+        <div class="collisions">
+          Health: 
+          <div class="healthBar">
+            <div class="healthIndicator" style="width: 0%;"></div>
+          </div>
+          <span>0</span>%
+        </div>
       </div>
-
+      <svg class="gameboard" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+            <image xlink:href="asteroid.png" x="0" y="0" width="100" height="100" />
+          </pattern>
+        </defs>   
+        <!--<circle class='hero' cx='60' cy='60' r='5' style='fill: orange'>-->
+      </svg>
+      <script src="lib/d3.js" charset="utf-8"></script>
+      <script src='watchout.js'></script>
     </div>
-    <svg class="gameboard" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <!--<circle class='hero' cx='60' cy='60' r='5' style='fill: orange'>-->
-    </svg>
-    <script src="lib/d3.js" charset="utf-8"></script>
-    <script src='watchout.js'></script>
+
   </body>
 </html>

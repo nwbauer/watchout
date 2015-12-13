@@ -6,19 +6,33 @@
     src: url("8-bit.ttf") /* TTF file for CSS3 browsers */
 }
 
-body{
+#gameBox{
   font-family: "8bit";
   font-size: 20px;
   letter-spacing: 2px;
+  color: #8DDD2F;
+  background-color: #717171;
+  text-shadow: 1px 1px 7px #000;
 }
 .healthBar {
   width: 200px;
-  height: 20px;
+  height: 12px;
   border: 2px solid #81BD3B;
   margin: 10px;
+  margin: 0;
   background-color: #F0F0F0;
   border-radius: 5px;
   box-shadow: inset 0px 3px 10px #A8D250;
+  display: inline-block;
+}
+
+.time {
+  margin-bottom: 23px;
+}
+
+.scoreboard {
+margin: 10px 25%;
+padding-top: 15px;
 }
 
 .healthIndicator {
@@ -43,6 +57,7 @@ svg {
   background-color: #000;
   background-size: 160%;
   max-width: 750px;
+  margin: 10px 25%;
 }
 
 /* Note: an asteroid image is included in this repo.

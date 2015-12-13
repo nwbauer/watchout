@@ -3,7 +3,7 @@
 // start slingin' some d3 here.
 
 //game settings
-var currentLevel = 1;
+var currentLevel;
 var levelTime = 15*1000;
 
 var longestTime = 0;
@@ -50,9 +50,12 @@ d3.select('svg').on('click', function(d) {
   time = 0;
   gameRunning = true;
   health = 100;
+  currentLevel = 0;
+
   hero.style('fill', 'orange');
   d3.select('.collisions > span').text(health);
   d3.select('.healthIndicator').style('width', health + '%');
+
 
   if(firstClicked){
     firstClicked = false;
@@ -60,8 +63,15 @@ d3.select('svg').on('click', function(d) {
       if(gameRunning){
         time += timeIncrement;
 
-        if(time > (currentLevel-1)*levelTime){
+        if(time > (currentLevel)*levelTime){
           currentLevel++;
+          if(health+10> 100){
+            health = 100;
+          }else{
+            health+=10;
+          }
+          d3.select('.collisions > span').text(health);
+          d3.select('.healthIndicator').style('width', health + '%');
           d3.select(".level > span").text(currentLevel);
           console.log("added 5");
           addEnemies();
@@ -79,7 +89,6 @@ d3.select('svg').on('click', function(d) {
     }, 2000);
   }else{
     removeAllEnemies();
-    addEnemies();
   }
 
 
